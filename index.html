@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+    <table id="resultTable">
+    <thead>
+        <tr>
+            <th>消失点(px)</th>
+            <th>出現点(px)</th>
+            <th>平均値(px)</th>
+            <th>100pxの長さ(㎜)</th>
+            <th>観察距離(㎝)</th>
+            <th>盲点の位置(°)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="data_d1">-</td>
+            <td id="data_d2">-</td>
+            <td id="data_avg">-</td>
+            
+            <td>
+                <input type="number" id="input_pixelSize" value="20" style="width: 80px; text-align: center;">
+            </td>
+            <td>
+                <input type="number" id="input_obsDist" value="40" style="width: 80px; text-align: center;">
+            </td>
+            
+            <td id="data_angle">-</td>
+        </tr>
+    </tbody>
+</table>
+  </body>
+</html>
