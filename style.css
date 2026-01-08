@@ -1,0 +1,123 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+
+
+/* ---------------------------------- */
+/* テーブル全体のスタイル */
+/* ---------------------------------- */
+#resultTable {
+    /* 罫線を一つにまとめる */
+    border-collapse: collapse; 
+    width: 100%;
+    max-width: 950px; /* 適切な最大幅を設定 */
+    margin: 20px auto; /* ページ中央に配置 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影で浮き上がらせる */
+    border-radius: 8px; /* 角を丸くする */
+    overflow: hidden; /* 角丸に対応 */
+}
+
+/* ---------------------------------- */
+/* ヘッダーのスタイル */
+/* ---------------------------------- */
+#resultTable thead th {
+    background-color: rgba(220,220,220); /* 主要な青色 */
+    color: black; /* 文字色を白に */
+    padding: 12px 6px;
+    font-size: 14px;
+    font-weight: 60;
+    text-align: center;
+    border: none; /* ヘッダーの罫線は削除 */
+    border-right: 1px solid rgba(0, 0, 0, 0.2); /* セル間に薄い仕切り */
+}
+
+#resultTable thead th:last-child {
+    border-right: none; /* 最後の列の仕切りは不要 */
+}
+
+
+/* ---------------------------------- */
+/* データセルのスタイル */
+/* ---------------------------------- */
+#resultTable tbody td {
+    padding: 10px 6px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ddd; /* 薄いグレーの罫線 */
+    /* データがない場合のハイフンを目立たせない */
+    color: #333; 
+}
+
+/* 偶数行の背景色を変更して縞模様にする (視認性向上) */
+#resultTable tbody tr:nth-child(even) {
+    background-color: #f4f4f9; /* 非常に薄い青みがかったグレー */
+}
+
+
+
+/* 盲点の角度の列 (最終列) を強調する */
+#resultTable tbody td:last-child {
+    font-weight: bold;
+    color: #e91e63; /* ピンクや赤系で結果を強調 */
+}
+
+
+
+
+/* ---------------------------------- */
+/* データセルのスタイル (再定義) */
+/* ---------------------------------- */
+#resultTable tbody td {
+    padding: 0; /* paddingを0にして、入力フォームがセル全体を使うようにする */
+    text-align: center;
+    border: 1px solid #ddd;
+    height: 40px; /* セルの高さを確保 (フォームの高さに合わせて調整) */
+}
+
+/* ---------------------------------- */
+/* テーブル内の入力フォームのスタイル */
+/* ---------------------------------- */
+#resultTable input[type="number"] {
+    /* セル幅いっぱいに広げる */
+    width: 100%;
+    
+    /* セルのpaddingを反映させるため、box-sizingをborder-boxに設定 */
+    box-sizing: border-box; 
+    
+    /* フォーム自体のボーダーを削除し、セルのボーダーに溶け込ませる */
+    border: none;
+    
+    /* 高さをセルに合わせる */
+    height: 40px; 
+    
+    /* 背景色をセルに合わせる (透過させるか、セルの背景色と同じにする) */
+    background-color: transparent; 
+    
+    /* 文字の位置を中央に */
+    text-align: center;
+    
+    /* フォントサイズをセルに合わせる */
+    font-size: 16px;
+    
+    /* フォームにフォーカスが当たったときのアウトラインを消すか、目立たない色にする */
+    outline: none;
+}
+
+/* フォームを埋め込んだセルのホバー時の背景色を無効にする */
+#resultTable tbody tr:hover td:nth-child(4) input,
+#resultTable tbody tr:hover td:nth-child(5) input {
+    /* ホバー時も入力フォームの背景を透明に保つことで、tr:hoverの影響を受ける */
+    background-color: transparent; 
+}
+
+/* フォームにフォーカスが当たったときに視覚的なフィードバックを与える */
+#resultTable input[type="number"]:focus {
+    box-shadow: inset 0 0 0 1px #3f51b5; /* 内側に薄い青の枠線を表示 */
+}
+
